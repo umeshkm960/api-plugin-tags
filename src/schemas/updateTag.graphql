@@ -16,6 +16,8 @@ input UpdateTagInput {
   "ID of rule to modify"
   id: ID!
 
+  _rId: String
+
   "Whether the tag is visible"
   isVisible: Boolean!
 
