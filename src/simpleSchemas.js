@@ -64,6 +64,10 @@ export const Tag = new SimpleSchema({
     type: String,
     optional: true
   },
+  "_rId": {
+    type: String,
+    optional: true
+  },
   "name": String,
   "slug": String,
   "type": {
