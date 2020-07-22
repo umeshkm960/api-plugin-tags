@@ -13,11 +13,15 @@ input UpdateTagInput {
   "Hero media URL"
   heroMediaUrl: String
 
+  thumbnailMediaUrl: String
+
   "ID of rule to modify"
   id: ID!
 
   "Whether the tag is visible"
   isVisible: Boolean!
+
+  isTagIncludeInMenu: Boolean
 
   "Tag metafields"
   metafields: [MetafieldInput]
