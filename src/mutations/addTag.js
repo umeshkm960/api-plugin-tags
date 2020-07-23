@@ -13,7 +13,7 @@ import { Tag as TagSchema } from "../simpleSchemas.js"; // TODO: update schemas
  * @returns {Promise<Object>} AddTagPayload
  */
 export default async function addTag(context, input) {
-  const { _rId, shopId, name, isVisible, displayTitle, metafields, heroMediaUrl, slug: slugInput } = input;
+  const { _rId, shopId, name, isVisible, displayTitle, metafields, heroMediaUrl, thumbnailMediaUrl, slug: slugInput, isTagIncludeInMenu } = input;
   const { appEvents, collections } = context;
   const { Tags } = collections;
 
@@ -28,6 +28,7 @@ export default async function addTag(context, input) {
   const tag = {
     _id: Random.id(),
     _rId,
+    isTagIncludeInMenu: isTagIncludeInMenu,
     isDeleted: false,
     isTopLevel: false,
     isVisible,
@@ -36,6 +37,7 @@ export default async function addTag(context, input) {
     name,
     displayTitle,
     heroMediaUrl,
+    thumbnailMediaUrl,
     shopId,
     createdAt: now,
     updatedAt: now

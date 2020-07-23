@@ -12,8 +12,14 @@ input AddTagInput {
   "Hero media URL"
   heroMediaUrl: String
 
+  "Thumbnail media URL"
+  thumbnailMediaUrl: String
+
   "Whether the tag is visible"
   isVisible: Boolean!
+
+  "Whether the tag is included in menu in front-end"
+  isTagIncludeInMenu: Boolean
 
   "Tag metafields"
   metafields: [MetafieldInput]

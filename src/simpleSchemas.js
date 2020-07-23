@@ -97,6 +97,10 @@ export const Tag = new SimpleSchema({
     type: Boolean,
     defaultValue: true
   },
+  "isTagIncludeInMenu": {
+    type: Boolean,
+    defaultValue: true
+  },
   "groups": {
     type: Array, // groupIds that this tag belongs to
     optional: true,
@@ -114,6 +118,10 @@ export const Tag = new SimpleSchema({
     type: Date
   },
   "heroMediaUrl": {
+    type: String,
+    optional: true
+  },
+  "thumbnailMediaUrl": {
     type: String,
     optional: true
   },

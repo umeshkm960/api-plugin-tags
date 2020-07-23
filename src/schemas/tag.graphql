@@ -18,6 +18,9 @@ type Tag implements Node & Deletable {
   "A string containing the hero image url for a Tag Listing Page"
   heroMediaUrl: String
 
+  "A string containing the thumbnail image url for a Tag Listing Page"
+  thumbnailMediaUrl: String
+
   """
   If `true`, this object should be considered deleted. Soft deleted objects are not
   returned in query results unless you explicitly ask for them.
@@ -29,6 +32,9 @@ type Tag implements Node & Deletable {
 
   "If `true`, this tag's Tag Listing Page should be visible to the public"
   isVisible: Boolean!
+
+  "If `true`, this tag will be included in frontend's tag-menu"
+  isTagIncludeInMenu: Boolean
 
   "Arbitrary additional metadata about this tag"
   metafields: [Metafield]
