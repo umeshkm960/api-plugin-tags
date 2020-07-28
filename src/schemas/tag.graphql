@@ -3,6 +3,9 @@ type Tag implements Node & Deletable {
   "The tag ID"
   _id: ID!
 
+  "Category ID from magento"
+  _rId: String
+
   "The date and time at which this tag was created"
   createdAt: DateTime!
 
@@ -15,6 +18,9 @@ type Tag implements Node & Deletable {
   "A string containing the hero image url for a Tag Listing Page"
   heroMediaUrl: String
 
+  "A string containing the thumbnail image url for a Tag Listing Page"
+  thumbnailMediaUrl: String
+
   """
   If `true`, this object should be considered deleted. Soft deleted objects are not
   returned in query results unless you explicitly ask for them.
@@ -26,6 +32,9 @@ type Tag implements Node & Deletable {
 
   "If `true`, this tag's Tag Listing Page should be visible to the public"
   isVisible: Boolean!
+
+  "If `true`, this tag will be included in frontend's tag-menu"
+  isTagIncludeInMenu: Boolean
 
   "Arbitrary additional metadata about this tag"
   metafields: [Metafield]
@@ -61,4 +70,12 @@ extend type Query {
     "Set to true if you want to include tags that have isVisible set to false"
     shouldIncludeInvisible: Boolean = false
   ): Tag
+
+  "Returns a tag from a provided tag ID or slug. Tags with isVisible set to false are excluded by default."
+  tagByEntityId(
+    
+    _rId: String
+
+  ): Tag
+
 }
