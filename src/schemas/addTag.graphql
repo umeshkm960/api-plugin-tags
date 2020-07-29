@@ -21,6 +21,8 @@ input AddTagInput {
   "Whether the tag is included in menu in front-end"
   isTagIncludeInMenu: Boolean
 
+  path: String
+
   "Tag metafields"
   metafields: [MetafieldInput]
 
