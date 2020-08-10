@@ -15,6 +15,7 @@ const inputSchema = new SimpleSchema({
   },
   "isVisible": Boolean,
   "isTagIncludeInMenu": Boolean,
+  "path": String,
   "metafields": { type: Array, optional: true },
   "metafields.$": new SimpleSchema({
     key: { type: String, max: 30 },
@@ -61,6 +62,7 @@ export default async function updateTag(context, input) {
     displayTitle: input.displayTitle,
     isVisible: input.isVisible,
     isTagIncludeInMenu: input.isTagIncludeInMenu,
+    path: input.path,
     metafields: (metafields.length && metafields) || null,
     featuredProductIds: input.featuredProductIds
   };

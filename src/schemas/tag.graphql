@@ -9,6 +9,8 @@ type Tag implements Node & Deletable {
   "The date and time at which this tag was created"
   createdAt: DateTime!
 
+  path: String
+
   "A string of the title to be displayed on a Tag Listing Page"
   displayTitle: String
 
@@ -58,6 +60,12 @@ type Tag implements Node & Deletable {
   updatedAt: DateTime!
 }
 
+type TagRes {
+
+  nodes: [Tag]
+
+}
+
 extend type Query {
   "Returns a tag from a provided tag ID or slug. Tags with isVisible set to false are excluded by default."
   tag(
@@ -71,11 +79,18 @@ extend type Query {
     shouldIncludeInvisible: Boolean = false
   ): Tag
 
-  "Returns a tag from a provided tag ID or slug. Tags with isVisible set to false are excluded by default."
+  "Returns a tag from a provided _rId."
   tagByEntityId(
     
     _rId: String
 
   ): Tag
+
+  "Returns tags from a provided array of _rId(s)"
+  tagsByEntityIds(
+    
+    _rIds: [String]
+
+  ): TagRes
 
 }

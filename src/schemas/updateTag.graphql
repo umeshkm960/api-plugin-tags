@@ -25,6 +25,8 @@ input UpdateTagInput {
 
   isTagIncludeInMenu: Boolean
 
+  path: String
+
   "Tag metafields"
   metafields: [MetafieldInput]
 

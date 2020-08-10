@@ -74,6 +74,10 @@ export const Tag = new SimpleSchema({
     type: String,
     optional: true
   },
+  "path": {
+    type: String,
+    optional: true
+  },
   "metafields": {
     type: Array,
     optional: true
