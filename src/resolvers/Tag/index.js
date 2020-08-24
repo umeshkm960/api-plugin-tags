@@ -5,6 +5,7 @@ import subTags from "./subTags.js";
 
 export default {
   _id: (tag) => encodeTagOpaqueId(tag._id),
+  _id_decoded: (tag) => tag._id,
   heroMediaUrl,
   thumbnailMediaUrl,
   subTagIds: (tag) => (tag.relatedTagIds || []).map(encodeTagOpaqueId),
